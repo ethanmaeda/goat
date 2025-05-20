@@ -23,10 +23,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run script
+      - name: Debug check for env var
+        run: echo "YOUTUBE_API_KEY is ${YOUTUBE_API_KEY}"
         env:
             YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+      - name: Run script
         run: python scrape.py
+        env:
+            YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
       - name: Commit and push if there are changes
         run: |

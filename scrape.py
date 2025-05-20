@@ -4,7 +4,7 @@ import json
 from dotenv import load_dotenv
 import re
 
-load_dotenv()
+load_dotenv(override=False)
 API_KEY = os.getenv("YOUTUBE_API_KEY")
 CHANNEL_ID = "UCq6VFHwMzcMXbuKyG7SQYIg" 
 BASE_URL = "https://www.googleapis.com/youtube/v3"
