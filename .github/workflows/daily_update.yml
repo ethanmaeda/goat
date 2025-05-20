@@ -21,10 +21,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Create .env file with YouTube API key
-        run: echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" > .env
-
       - name: Run script
+        env:
+            YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scrape.py
 
       - name: Commit and push if there are changes
