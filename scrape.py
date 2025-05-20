@@ -4,8 +4,8 @@ import json
 from dotenv import load_dotenv
 import re
 
-load_dotenv(override=False)
-API_KEY = os.getenv("API_KEY")
+load_dotenv()
+API_KEY = os.getenv("YOUTUBE_API_KEY")
 CHANNEL_ID = "UCq6VFHwMzcMXbuKyG7SQYIg" 
 BASE_URL = "https://www.googleapis.com/youtube/v3"
 OUTPUT_FILE = "output/phrases.json"
@@ -108,6 +108,6 @@ def main():
 
 if __name__ == "__main__":
     if not API_KEY:
-        print("Error: API_KEY not set in environment.")
+        print("Error: YOUTUBE_API_KEY not set in environment.")
     else:
         main()
