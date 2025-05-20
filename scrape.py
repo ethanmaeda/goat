@@ -108,6 +108,6 @@ def main():
 
 if __name__ == "__main__":
     if not API_KEY:
-        print("Error: YOUTUBE_API_KEY not set in environment.")
+        print("Error: API_KEY not set in environment.")
     else:
         main()
